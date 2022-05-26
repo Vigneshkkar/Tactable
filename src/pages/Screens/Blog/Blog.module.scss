@@ -1,0 +1,51 @@
+@import '../../../styles/theme.module.scss';
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .container {
+    background-color: $card-bg-color;
+    margin: 1.5rem;
+    padding: 0.75rem;
+    border-radius: $border-radius;
+    max-width: 50rem;
+    box-shadow: $card-bg-shadow;
+    width: -webkit-fill-available;
+  }
+  .detailsCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0.5rem;
+    border-bottom: 1px solid #fff;
+  }
+  .authors {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+  }
+  .authHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem;
+    margin-left: 0px;
+    & > p {
+      margin-left: 0.5rem;
+    }
+  }
+  .blogContent {
+    padding: 1rem;
+  }
+  .commentsCont {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    // background-color: $card-bg-color-inset;
+    border-radius: $border-radius;
+    max-width: 50rem;
+    box-shadow: $card-bg-shadow-inset;
+    width: -webkit-fill-available;
+  }
+}

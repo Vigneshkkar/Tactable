@@ -1,0 +1,14 @@
+@import '../../../styles/theme.module.scss';
+.commentCont {
+  //   background: $card-bg-hover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #fff;
+  .datesCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

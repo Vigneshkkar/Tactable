@@ -1,0 +1,18 @@
+@import '../../../styles/theme.module.scss';
+
+.wrapper {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .ProgCont {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    flex-direction: column;
+  }
+}

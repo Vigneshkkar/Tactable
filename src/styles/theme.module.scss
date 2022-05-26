@@ -1,0 +1,20 @@
+$default-font-size: 1rem;
+$heading-font-size: 2rem;
+
+$content-color: rgb(209, 209, 209);
+$heading-color: #ffffff;
+$blog-content-color: #ffffff;
+$sutle-card-color: rgba(255, 255, 255, 0.685);
+$body-bg: #fda085;
+$border-radius: 50px;
+
+$card-bg-color-inset: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+$card-bg-hover: linear-gradient(135deg, #5ee7df, #b490ca);
+$card-bg-color: linear-gradient(225deg, #fda085, #fda085);
+$card-bg-shadow: -10px 10px 20px #d78871, 20px -20px 60px #ffb899;
+$card-bg-shadow-inset: inset -10px 10px 20px #d78871, 20px -20px 60px #ffb899;
+
+:export {
+  cardBgColor: $card-bg-color;
+  cardBgColorHover: $card-bg-hover;
+}

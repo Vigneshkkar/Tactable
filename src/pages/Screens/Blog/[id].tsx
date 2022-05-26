@@ -8,8 +8,14 @@ import { formatDate } from '../../../utils/Helper';
 import Comments from '../../components/comment/Comment';
 import styles from './Blog.module.scss';
 
+/**
+ *
+ * @param Blogs
+ * @returns React Node
+ *
+ * Dynamic Route for each indivudual blog
+ */
 const BlogScreen: NextPage<{ blog: Blogs }> = ({ blog }) => {
-  //   console.log(blog);
   return (
     <>
       <div className={styles.wrapper}>
@@ -79,9 +85,8 @@ type Params = {
   };
 };
 
-export async function getStaticProps({ params }: { params: { id: string } }) {
+export async function getStaticProps({ params }: Params) {
   const blog = await getBlogsById(params.id);
-  //   const blog = res.json();
   return {
     props: {
       blog,
@@ -91,8 +96,6 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
 
 export async function getStaticPaths() {
   const data = await getBlogs();
-  //   const data = res.json();
-
   return {
     paths: data.map((blog: Blogs) => {
       return {

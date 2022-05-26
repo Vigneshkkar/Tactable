@@ -1,6 +1,12 @@
 import { Modal, Input, Row, Checkbox, Button, Text } from '@nextui-org/react';
 import { NextPage } from 'next';
-import { useState } from 'react';
+
+/**
+ *
+ * @returns React Node
+ *
+ * Show when data loading failed
+ */
 
 const ErrorPop: NextPage = () => {
   return (

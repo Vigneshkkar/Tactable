@@ -1,8 +1,15 @@
 import { Pagination, css } from '@nextui-org/react';
 import { NextPage } from 'next';
 import { pageItems } from '../../../constants';
-import theme from '../../../styles/theme.module.scss';
 
+/**
+ *
+ * @param total : number of toal items
+ * @param current: Current viewing page
+ * @returns React Node
+ *
+ * Paginator componnt to show the pagination
+ */
 const Paginator: NextPage<{ total: number; current: Function }> = ({
   total,
   current,

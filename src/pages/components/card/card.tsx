@@ -5,8 +5,18 @@ import styles from './card.module.scss';
 import { useSpring, animated } from 'react-spring';
 
 import theme from '../../../styles/theme.module.scss';
-import { Avatar } from '@nextui-org/react';
 import Link from 'next/link';
+
+/**
+ *
+ * @param blog with Blogs Type
+ * @returns React Node
+ *
+ * Component to render the cards
+ *
+ * Used React Spring for sutle animation in future if we need
+ * to add more animation we can move the react spring to new animation controller
+ */
 
 const Card: NextPage<{ blog: Blogs }> = ({ blog }) => {
   const [{ x, color, scale }, set] = useSpring(() => ({
@@ -35,14 +45,7 @@ const Card: NextPage<{ blog: Blogs }> = ({ blog }) => {
           className={styles.container}>
           <div className={styles.heading}>{blog.title}</div>
           <div className={styles.description}>{blog.description}</div>
-          {/* <div className={styles.cornerContents}>
-          <div>
-          {blog.authors.map((people) => (
-            <Avatar key={people.id} alt={people.name} src={people.avatar} />
-            ))}
-          </div> */}
           <div className={styles.updatedAt}>{formatDate(blog.updatedAt)}</div>
-          {/* </div> */}
         </animated.div>
       </div>
     </Link>

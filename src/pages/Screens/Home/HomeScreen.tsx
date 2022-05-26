@@ -1,3 +1,6 @@
+/**
+ * Landing screen for the Home page where all the blogs are displayed
+ */
 import { Progress, Text } from '@nextui-org/react';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
@@ -11,12 +14,16 @@ import Paginator from '../../components/Paginator/Paginator';
 
 import styles from './Home.module.scss';
 
+// Home screen with components to render the blogs in card
 const HomeScreen: NextPage = () => {
+  // pagination pointer
   const [currentPage, setcurrentPage] = useState(1);
+  // restricted blogs for each page
   const [pageItemsData, setpageItemsData] = useState<Blogs[]>([]);
+  // load the data using React Query
   const { isLoading, isError, isSuccess, data } = useQuery('blogs', getBlogs);
 
-  // console.log(isLoading, isError, isSuccess, data);
+  // Handler to detect page change and update the data
   useEffect(() => {
     setpageItemsData(getPaginatedBlogs(data, currentPage, pageItems));
 
@@ -33,6 +40,7 @@ const HomeScreen: NextPage = () => {
         h1>
         Blog Posts
       </Text>
+      {/* while Loading show loading indicator */}
       {isLoading ? (
         <div className={styles.ProgCont}>
           <Progress
@@ -42,19 +50,15 @@ const HomeScreen: NextPage = () => {
             status='secondary'
             shadow
           />
-          <Text
-            h3
-            // css={{
-            //   textGradient: '45deg, $blue600 -20%, $pink600 50%',
-            // }}
-            color='secondary'
-            weight='bold'>
+          <Text h3 color='secondary' weight='bold'>
             Loading Awesome Blogs...
           </Text>
         </div>
       ) : null}
+      {/* If error while loading data show error message */}
       {isError ? <ErrorPop /> : null}
 
+      {/* Show data on success */}
       {isSuccess && data.length > 0 ? (
         <>
           {pageItemsData &&
@@ -71,6 +75,7 @@ const HomeScreen: NextPage = () => {
           )}
         </>
       ) : (
+        // Show no data message when no blog is availabe to show
         <Text h3 color='error'>
           No blogs to show right now please try again later.
         </Text>

@@ -4,6 +4,13 @@ import { Comment } from '../../../types';
 import { formatDate } from '../../../utils/Helper';
 import styles from './Comments.module.scss';
 
+/**
+ *
+ * @param Comment type
+ * @returns Reaact Node
+ *
+ * Used to add comments to blog page
+ */
 const Comments: NextPage<Comment> = ({
   title,
   createdAt,

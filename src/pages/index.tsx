@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 import HomeScreen from './Screens/Home/HomeScreen';
 
+// Initial screen where the component is loaded
 const Home: NextPage = () => {
   return (
     <div>
